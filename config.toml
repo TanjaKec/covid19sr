@@ -13,7 +13,7 @@ title = "COVID-19 SR"
     weight = 1
 
 [params]
-  description = "visualisation in R"
+  description = "data visualisations"
   cover = "images/user.jpg"
   author = "Tatjana Kecojevic"
   authorlocation = ""

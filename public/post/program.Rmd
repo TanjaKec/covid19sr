@@ -5,7 +5,7 @@ date: '2020-02-24'
 slug: programme
 categories: []
 tags:
-  - SisterAnalyst
+  - rststs
   - covid19
   - corona
 comments: yes
@@ -16,12 +16,12 @@ share: yes
 
 This R project is a joint effort of [Sister Analyst](https://sisteranalyst.org/) team: 
 
+- [Anđela Milivojević](https://www.linkedin.com/in/andjela-milivojevic/),
 - [Tijana Blagojev](https://www.linkedin.com/in/tijana-blagojev-288b3442/), 
 - [Jovana Savić](https://www.linkedin.com/in/jovana-savi%C4%87-12aa305a/), 
 - [Katarina Kosimina](https://www.linkedin.com/in/kosmina/) and 
 - [Tatjana Kecojević](https://www.linkedin.com/in/tatjana-kecojevic-803704143/). 
 
-The naration of our finding is done by [Anđela Milivojević](https://www.linkedin.com/in/andjela-milivojevic/) 
 
 Sisters is action 🙌💜
 
