@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openheroines on COVID-19 SR</title>
+    <link>/tags/openheroines/</link>
+    <description>Recent content in openheroines on COVID-19 SR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/openheroines/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Literacy and Covid1-19</title>
+      <link>/post/programme/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/programme/</guid>
+      <description>This was our first ever Open Heroines event here in Belgrade and we’re excited to be a part of such a welcoming and inclusive initiative.
+We got things started by creating this website publicising our event and making it clear from the get go what the participants could expect from the event (see the progremme below). The responses to the site were very positive and we were particularly bowled over by the wide range of backgrounds of the people wishing to attend.</description>
+    </item>
+    
+  </channel>
+</rss>
