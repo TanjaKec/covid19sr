@@ -12,7 +12,7 @@
     
   	<meta property="og:type" content="article" />
 
-    <meta property="og:article:published_time" content="2020-02-24T00:00:00Z" />
+    <meta property="og:article:published_time" content="2020-03-28T00:00:00Z" />
 
     
     <meta property="og:article:tag" content="rststs" />
@@ -88,8 +88,8 @@
         <h1 class="post-title">COVID-19 SR Visualisation in R</h1>
         <section class="post-meta">
         
-	<time class="post-date" datetime="2020-02-24">
-            2020-02-24
+	<time class="post-date" datetime="2020-03-28">
+            2020-03-28
           </time>
         
          
@@ -104,20 +104,56 @@
 
     <section class="post-content">
       
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
 
 
-<p>This R project is a joint effort of <a href="https://sisteranalyst.org/">Sister Analyst</a> team:</p>
-<ul>
-<li><a href="https://www.linkedin.com/in/andjela-milivojevic/">Anđela Milivojević</a>,</li>
-<li><a href="https://www.linkedin.com/in/tijana-blagojev-288b3442/">Tijana Blagojev</a>,</li>
-<li><a href="https://www.linkedin.com/in/jovana-savi%C4%87-12aa305a/">Jovana Savić</a>,</li>
-<li><a href="https://www.linkedin.com/in/kosmina/">Katarina Kosimina</a> and</li>
-<li><a href="https://www.linkedin.com/in/tatjana-kecojevic-803704143/">Tatjana Kecojević</a>.</li>
-</ul>
-<p>Sisters is action 🙌💜</p>
-<p><img src="/post/program_files/figure-html/unnamed-chunk-1-1.gif" /><!-- --></p>
-<p><img src="/post/program_files/figure-html/unnamed-chunk-2-1.gif" /><!-- --></p>
+<p>This is a data analysis report concerning the visualisation of the COVID-19 virus data within the Republic of Serbia. All of the report is created with <a href="https://www.r-project.org">R</a>. The data used for the analysis is sourced from the <a href="https://data.gov.rs/sr/datasets/covid-19-zarazheni/?fbclid=IwAR1nX00zb9p_ceNfBoxQaObyjI8XsMWEIKj2NYGhnTf2xAh6oMsvvmnbSoQ">Portal of Open Data of Republic of Serbia</a>. To learn how to use R and develop a report like this visit <a href="http://dsbootcamp.rbind.io/">Intro to DS Bootcamp in R</a>.</p>
+<p>This is a <a href="https://sisteranalyst.org/">Sister Analyst</a> project.</p>
+<div id="mapping-the-cases" class="section level2">
+<h2>Mapping the Cases</h2>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircles","args":[[44.6516,43.6169,43.9284,43.8582,43.8897,44.3077,45.8152,43.2196,44.8186,44.272,44.3323,44.7638,42.556,43.6223,44.0245,43.0155,43.9019,45.3786,45.8323,44.02,43.7259,43.581,42.9976,43.8608,43.3304,45.2504,44.8713,43.8592,43.1617,44.6222,43.2859],[20.9258,21.0025,21.3745,19.8441,20.3301,20.5612,19.6369,22.314,20.468,19.8874,21.0751,21.5163,21.9002,20.8956,20.4586,22.7776,22.2755,20.3995,20.4682,20.92,20.6896,21.3352,21.9445,20.1384,21.9,19.8499,20.6443,21.4119,22.5871,21.1826,20.6135],[1500,1500,3968.62696659689,1500,3354.10196624968,2598.07621135332,1500,1500,22197.9728804231,10173.4949746879,1500,1500,3674.23461417477,1500,1500,1500,2121.32034355964,2598.07621135332,3968.62696659689,5196.15242270663,2121.32034355964,5196.15242270663,2598.07621135332,2121.32034355964,9124.14379544733,6000,2121.32034355964,1500,2598.07621135332,4242.64068711929,2598.07621135332],null,null,{"interactive":true,"className":"","stroke":true,"color":"black","weight":1,"opacity":0.5,"fill":true,"fillColor":"blue","fillOpacity":0.5},["<b> SMEDEREVO <br> Ukupno =  1 <br>","<b> TRSTENIK <br> Ukupno =  1 <br>","<b> ĆUPRIJA <br> Ukupno =  7 <br>","<b> UŽICE <br> Ukupno =  1 <br>","<b> ČAČAK <br> Ukupno =  5 <br>","<b> ARANĐELOVAC <br> Ukupno =  3 <br>","<b> BAČKA TOPOLA <br> Ukupno =  1 <br>","<b> BELA PALANKA <br> Ukupno =  1 <br>","<b> BEOGRAD <br> Ukupno =  219 <br>","<b> VALJEVO <br> Ukupno =  46 <br>","<b> VELIKA PLANA <br> Ukupno =  1 <br>","<b> VELIKO GRADIŠTE <br> Ukupno =  1 <br>","<b> VRANJE <br> Ukupno =  6 <br>","<b> VRNJAČKA BANJA <br> Ukupno =  1 <br>","<b> GORNJI MILANOVAC <br> Ukupno =  1 <br>","<b> DIMITROVGRAD <br> Ukupno =  1 <br>","<b> ZAJEČAR <br> Ukupno =  2 <br>","<b> ZRENJANIN <br> Ukupno =  3 <br>","<b> KIKINDA <br> Ukupno =  7 <br>","<b> KRAGUJEVAC <br> Ukupno =  12 <br>","<b> KRALJEVO <br> Ukupno =  2 <br>","<b> KRUŠEVAC <br> Ukupno =  12 <br>","<b> LESKOVAC <br> Ukupno =  3 <br>","<b> LUČANI <br> Ukupno =  2 <br>","<b> NIŠ <br> Ukupno =  37 <br>","<b> NOVI SAD <br> Ukupno =  16 <br>","<b> PANČEVO <br> Ukupno =  2 <br>","<b> PARAĆIN <br> Ukupno =  1 <br>","<b> PIROT <br> Ukupno =  3 <br>","<b> POŽAREVAC <br> Ukupno =  8 <br>","<b> RAŠKA <br> Ukupno =  3 <br>"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"fitBounds":[42.556,19.6369,45.8323,22.7776,[]],"limits":{"lat":[42.556,45.8323],"lng":[19.6369,22.7776]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"url":"/post/program_files/figure-html//widgets/widget_unnamed-chunk-3.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="new-daily-cases" class="section level2">
+<h2>New Daily Cases</h2>
+<div id="animation" class="section level3">
+<h3>Animation</h3>
+<p><img src="/post/program_files/figure-html/unnamed-chunk-4-1.gif" /><!-- --></p>
+</div>
+<div id="table" class="section level3">
+<h3>Table</h3>
+<p>The following table shows the number of new cases for each day in each town. You can use the text box in the top right corner to fillter the table bt town.</p>
+<div id="htmlwidget-3" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"url":"/post/program_files/figure-html//widgets/widget_unnamed-chunk-5.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="total-number-of-cases" class="section level2">
+<h2>Total Number of Cases</h2>
+<div id="animation-1" class="section level3">
+<h3>Animation</h3>
+<p><img src="/post/program_files/figure-html/unnamed-chunk-6-1.gif" /><!-- --></p>
+</div>
+<div id="table-1" class="section level3">
+<h3>Table</h3>
+<p>Table below shows cumulative number of cases for each day and each town. Use the top right handside textbox to filter the table by town.
+<div id="htmlwidget-4" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"url":"/post/program_files/figure-html//widgets/widget_unnamed-chunk-7.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script></p>
 <hr />
+<p>Sisters in action: <a href="https://www.linkedin.com/in/tatjana-kecojevic-803704143/">Tatjana Kecojević</a>, <a href="https://www.linkedin.com/in/tijana-blagojev-288b3442/">Tijana Blagojev</a>, <a href="https://www.linkedin.com/in/jovana-savi%C4%87-12aa305a/">Jovana Savić</a>, <a href="https://www.linkedin.com/in/kosmina/">Katarina Kosimina</a> and <a href="https://www.linkedin.com/in/andjela-milivojevic/">Anđela Milivojević</a> 🙌💜</p>
+</div>
+</div>
 
     </section>
 
