@@ -39,6 +39,7 @@ library(ggplot2)
 library(gganimate)
 library(dplyr)
 library(leaflet)
+library(plotly)
 
 url1 <- "https://data.gov.rs/s/resources/covid-19-zarazheni/20200327-074850/covid-19-20200326.xlsx"
 
@@ -145,22 +146,32 @@ last_day_map <- last_day %>%
   filter(Cases != 0) %>% 
   group_by(Town)
 
-minlat <- min(last_day_map$lat)
-maxlat <- max(last_day_map$lat)
-minlng <- min(last_day_map$lng)
-maxlng <- max(last_day_map$lng)
+mdata <- last_day_map %>%
+  arrange(Cases) %>%
+  mutate(name = factor(Town, unique(Town))) %>%
+  mutate( mytext = paste(
+    "Town: ", name, "\n", 
+    "Cases: ", Cases, sep = "")
+  )
 
+SR <- map_data("world") %>% filter(region=="Serbia")
+  
+p <-
+  ggplot() +
+  geom_polygon(data = SR, aes(x=long, y = lat, group = group), fill="grey", alpha=0.3) +
+  geom_point(data = mdata, aes(x=lng, y=lat, size=Cases, color=Cases, text=mytext, alpha = 0.3)) + 
+  scale_size_continuous(range=c(1,15)) +
+  #scale_color_viridis_d(option="inferno") +
+  scale_alpha_continuous(trans="log") +
+  theme_void() +
+  ylim(42,47) +
+  coord_map() +
+  theme(legend.position = "right")
 
-last_day_map %>% 
-  group_by(Town, lat, lng) %>% 
-  leaflet() %>% 
-  addTiles() %>%
-  fitBounds(~minlng, ~minlat, ~maxlng, ~maxlat) %>% 
-  addCircles(lng = ~lng, lat = ~lat,
-             radius = ~Cases^(.5)*1500, weight = 1, color = "black",
-             fillColor = "blue", fillOpacity = 0.5,  
-             popup = ~paste("<b>", Town, "<br>", "Ukupno = ", Cases, "<br>")) 
+p <- ggplotly(p, tooltip="text")
+p
 ```
+
 
 
 ```{r, echo=FALSE}
