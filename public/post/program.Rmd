@@ -1,7 +1,7 @@
 ---
 title: "COVID-19 SR Visualisation in R"
 author: Tatjana Kecojevic
-date: "`r Sys.Date()`"
+date: '2020-02-24'
 slug: programme
 categories: []
 tags:
@@ -20,12 +20,10 @@ knitr::opts_chunk$set(echo = FALSE,
                       prompt = TRUE,
                       message = FALSE,
                       warning = FALSE,
-                      fig.height = 5,
-                      fig.width = 7,
                       cache = FALSE)
 ```
 
-This is a data analysis report concerning the visualisation of the COVID-19 virus data within the Republic of Serbia. All of the report is created with [R](https://www.r-project.org). The data used for the analysis is sourced from the [Portal of Open Data of Republic of Serbia](https://data.gov.rs/sr/datasets/covid-19-zarazheni/?fbclid=IwAR1nX00zb9p_ceNfBoxQaObyjI8XsMWEIKj2NYGhnTf2xAh6oMsvvmnbSoQ). To learn how to use R and develop a report like this visit [Intro to DS Bootcamp in R](http://dsbootcamp.rbind.io/).
+This is a data analysis report concerning the visualisation of the COVID-19 virus within the Republic of Serbia. All of the report is created with [R](https://www.r-project.org). The data used for the analysis is sourced from the [Portal of Open Data of Republic of Serbia](https://data.gov.rs/sr/datasets/covid-19-zarazheni/?fbclid=IwAR1nX00zb9p_ceNfBoxQaObyjI8XsMWEIKj2NYGhnTf2xAh6oMsvvmnbSoQ). To learn how to use R and develop a report like this visit [Intro to DS Bootcamp in R](http://dsbootcamp.rbind.io/).
 
 This is a [Sister Analyst](https://sisteranalyst.org/) project. 
 
