@@ -224,7 +224,7 @@ ggplot(data_plot, aes(x = Town, y = Cases, fill = Town)) +
 
 ### Table
 
-The following table shows the number of new cases for each day in each town. You can use the text box in the top right corner to fillter the table bt town.
+The following table shows the number of new cases for each day in each town. You can use the text box in the top right corner to fillter the table by town.
 
 ```{r, echo = FALSE}
 ts <- mydcase %>% 
