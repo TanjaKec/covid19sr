@@ -6,7 +6,7 @@
     <description>Recent content in covid19 on COVID-19 SR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>COVID-19 SR Visualisation in R</title>
       <link>/post/programme/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/programme/</guid>
       <description>This is a data analysis report concerning the visualisation of the COVID-19 virus within the Republic of Serbia. All of the report is created with R. The data used for the analysis is sourced from the Portal of Open Data of Republic of Serbia. To learn how to use R and develop a report like this visit Intro to DS Bootcamp in R.</description>
