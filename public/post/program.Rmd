@@ -171,8 +171,6 @@ p <- ggplotly(p, tooltip="text")
 p
 ```
 
-
-
 ```{r, echo=FALSE}
 ts <- last_day_map %>% 
   select(Town, Cases) %>% 

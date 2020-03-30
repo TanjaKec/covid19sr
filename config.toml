@@ -1,5 +1,5 @@
 theme = "hugo-theme-air"
-baseURL = "https://covid19sr.netlify.com/"
+baseURL = "https://covid19sr.rbind.io/"
 languageCode = "en-us"
 title = "COVID-19 SR"
 
