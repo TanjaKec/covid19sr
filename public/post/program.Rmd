@@ -40,8 +40,10 @@ library(gganimate)
 library(dplyr)
 library(leaflet)
 library(plotly)
+library(scales)
 
-url1 <- "https://data.gov.rs/s/resources/covid-19-zarazheni/20200329-210346/covid-19.xlsx"
+url1 <- "https://data.gov.rs/s/resources/covid-19-zarazheni/20200330-200441/covid-19.xlsx"
+# https://data.gov.rs/sr/datasets/r/1977833a-36f2-445e-916a-ef51b217d3a0
 
 GET(url1, 
     write_disk(tf <- tempfile(fileext = ".xlsx")))
@@ -181,11 +183,71 @@ widgetframe::frameWidget(ts)
 ```
 
 
+## Total Number of Cases by Day
+
+```{r, echo = FALSE}
+mydt <- mydtotal %>% 
+  drop_na() %>% 
+  group_by(Date) %>% 
+  arrange(Date) %>% 
+  summarise(total = sum(Cases))
+
+# Bar Chart: Total number of cases for each day
+mydt %>% 
+  ggplot(aes(x = Date, y = total)) +
+     geom_bar(stat="identity", fill = "#00688B", color = "black") + 
+     theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5)) +
+     labs (title = "Total Number of Cases by Day", 
+                     caption = "Data from: https://data.gov.rs", 
+                     x = "Date", y = "Number of Cases") +
+     theme_bw() +
+     theme(legend.position="none") +
+     theme(axis.text.x = element_text(angle = 90)) +
+     scale_x_date(labels = date_format("%m-%d"),
+                  breaks = 'day') 
+
+# Data Table: Total number of cases for each day 
+ts <- mydt %>%
+  DT::datatable()
+
+widgetframe::frameWidget(ts)
+```
+
+## Growth Rate of New Cases Day by Day
+ 
+The number of registered cases at the beginning of the monitoring for covid-19 in Serbia was very small, starting from 1 on 06-March-202 and increasing by a few in the first week, reflecting in the high growth rate for those days. For example, from the first case reported on 6th March to the fourth on 9th March there is a difference of three, which gives 300% growth rate. For that reason the following graph includes growth rate figures starting from 12-March, whilst the table includes the full set of figures. 
+
+
+```{r, echo=FALSE}  
+# Growth rate day-by-day
+growth_rate <- mydt %>%
+  arrange(Date) %>%
+  mutate(Diff_growth = total - lag(total), # Difference in route between years
+         Rate_percent = round(Diff_growth/lag(total) * 100, 2))
+  
+gr_l <- dim(growth_rate)[1]
+
+growth_rate[7:gr_l,]  %>% 
+  ggplot(aes(x = Date, y = Rate_percent)) + 
+  geom_line() + geom_point(col = "red") +
+  xlab("Date") + ylab("Percentage Growth") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_x_date(labels = date_format("%m-%d"),
+               breaks = 'day') 
+
+ts <- growth_rate %>% DT::datatable()
+
+widgetframe::frameWidget(ts)
+```
+
+
+
 ## New Daily Cases
 
 ### Animation
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.high = 20, fig.width = 10}
 data_plot <- mydcase %>% 
   filter(Cases != 0) %>% 
   group_by(Town)
@@ -238,7 +300,7 @@ widgetframe::frameWidget(ts)
 ### Animation
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.high = 20, fig.widt = 10}
 data_plot <- mydtotal %>% 
   filter(Cases != 0) %>% 
   group_by(Town)
