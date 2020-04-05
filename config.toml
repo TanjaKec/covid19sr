@@ -18,12 +18,12 @@ title = "COVID-19 SR"
   author = "Tatjana Kecojevic"
   authorlocation = ""
   authorwebsite = "https://sisteranalyst.org"
-  bio= "my bio"
+  bio= "mybio"
   logo = "images/user.png"
   googleAnalyticsUserID = ""
   # Optional RSS-Link, if not provided it defaults to the standard index.xml
-  RSSLink = ""
-  githubName = "SisterAnalyst"
+  RSSLink = "https://www.r-bloggers.com"
+  githubName = "https://github.com/TanjaKec/covid19sr"
   twitterName = "@SisterAnalyst"
   # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
   hideHUGOSupport = false
