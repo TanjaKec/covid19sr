@@ -55,6 +55,7 @@ library(leaflet)
 library(plotly)
 library(scales)
 library(cowplot)
+library(fontawesome)
 ```
 
 ### Using [ecdc data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
@@ -526,4 +527,6 @@ widgetframe::frameWidget(ts)
 
 ---
 
-[<i class='fab fa-fw fa-github'></i>GitHub](https://github.com/TanjaKec/covid19sr)
+#### [`r fa("github", fill = "steelblue")`](https://github.com/TanjaKec/covid19sr) [`r fa("twitter", fill = "steelblue")`](https://twitter.com/SisterAnalyst)
+
+This website is built with ♥️ in `r fa("r-project", fill = "steelblue")`.
