@@ -66,7 +66,7 @@ library(fontawesome)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-08.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-09.xlsx"
 
 # Interactive graph: hower to get date and figure
 
@@ -124,7 +124,7 @@ fig
 
 #### Number of total confirmed cases
 
-The experience with COVID-19 shows that infection of disease can be controlled by implementing the measures of prevention as soon as an outbreak has been detected.
+The experience with COVID-19 shows that infection of the disease can be controlled by implementing the measures of prevention as soon as an outbreak has been detected.
 
 To monitor the effectives of the introduced measures we focus on daily cumulative cases of COVID-19 infection that can be expressed as 
 
