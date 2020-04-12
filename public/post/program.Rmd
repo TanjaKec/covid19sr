@@ -66,11 +66,19 @@ library(fontawesome)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-11.xlsx"
+
+
+
+curDate <- as.Date(Sys.Date())
+url2 <- paste("https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-" , curDate ,".xlsx", sep="")
 
 # Interactive graph: hower to get date and figure
 
-GET(url2, write_disk(tf <- tempfile(fileext = ".xlsx")))
+# Go back in time until we find something
+while(GET(url2, write_disk(tf <- tempfile(fileext = ".xlsx")))$status_code != "200") {
+  curDate <- curDate - 1
+  url2 <- paste("https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-" , curDate ,".xlsx", sep="")
+}
 
 covid_ecdc <- read_excel(tf)
 str(covid_ecdc)
