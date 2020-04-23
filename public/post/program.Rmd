@@ -41,7 +41,6 @@ Up **until March 29th** the [Office for Information technologies and eGovernment
 We will continue to source any available data related to Covid19 in Serbia and update our site accordingly using data published by [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) .
 
 ---
-
 ```{r libraries, echo=FALSE, message = FALSE, warning = FALSE, results = FALSE}
 library(readxl)
 library(tidyverse)
@@ -66,7 +65,7 @@ library(fontawesome)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-21.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-22.xlsx"
 
 # Interactive graph: hower to get date and figure
 
