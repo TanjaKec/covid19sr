@@ -65,7 +65,7 @@ library(fontawesome)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-24.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-04-25.xlsx"
 
 # Interactive graph: hower to get date and figure
 
@@ -226,7 +226,7 @@ covid_sr %>%
   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank()) +
-  geom_vline(xintercept = as.numeric(as.Date(c("2020-03-16", "2020-03-22", "2020-03-28", "2020-04-04", "2020-04-10", "2020-04-17"))), linetype=4, colour="red", alpha = 0.5) +
+  geom_vline(xintercept = as.numeric(as.Date(c("2020-03-16", "2020-03-22", "2020-03-28", "2020-04-04", "2020-04-10", "2020-04-17", "2020-04-24"))), linetype=4, colour="red", alpha = 0.5) +
   annotate(geom="text", x=as.Date("2020-03-16"), y = 150, 
            label="state of\nemergency", col = "dodgerblue4") +
   annotate(geom="text", x=as.Date("2020-03-22"), y = 70, 
@@ -238,7 +238,9 @@ covid_sr %>%
   annotate(geom="text", x=as.Date("2020-04-10"), y = -90, 
            label="Easter curfew\n5pm Fri-5am Mon ", col = "dodgerblue4") +
   annotate(geom="text", x=as.Date("2020-04-17"), y = 200, 
-           label="Easter curfew\n5pm Fri-5am Tue ", col = "dodgerblue4")
+           label="Easter curfew\n5pm Fri-5am Tue ", col = "dodgerblue4") +
+  annotate(geom="text", x=as.Date("2020-04-24"), y = -120, 
+           label="weekend curfew\n5pm Fri-5am Mon ", col = "dodgerblue4")
 ```
 
 We are interested to see the difference of pandemic in the ex YU region.
