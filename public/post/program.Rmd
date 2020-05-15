@@ -67,7 +67,7 @@ library(fontawesome)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-05-14.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-05-15.xlsx"
 
 # Interactive graph: hower to get date and figure
 
