@@ -71,6 +71,8 @@ library(widgetframe)
 knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara")
 ```
 
+<blockquote class="twitter-tweet"><p lang="und" dir="ltr">📌CINS je otkrio da je oko 215 miliona dinara strankama stiglo od donatora iz nerazvijenih delova Srbije, a pare su dolazile i od ljudi koji primaju socijalnu pomoć 👇💰<a href="https://t.co/2HHXrSLSLC">https://t.co/2HHXrSLSLC</a></p>&mdash; CINS (@CINSerbia) <a href="https://twitter.com/CINSerbia/status/1267397873383149568?ref_src=twsrc%5Etfw">June 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ---
 
 ### Using [ecdc data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
