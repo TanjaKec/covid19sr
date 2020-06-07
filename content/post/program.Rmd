@@ -16,8 +16,8 @@ katex: true
 ---
   
 ```{r setup, include=FALSE, message = FALSE, warning = FALSE, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE,
-                      include=TRUE,
+knitr::opts_chunk$set(echo = TRUE,
+                      include = TRUE,
                       prompt = TRUE,
                       message = FALSE,
                       warning = FALSE,
@@ -65,8 +65,10 @@ library(tmaptools)
 library(widgetframe)
 ```
 
+
+
 ```{r, out.width = "100%", fig.align = 'center', echo=FALSE}
-knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara/")
+knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara")
 ```
 
 ---
@@ -77,7 +79,7 @@ knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-st
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-06.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-07.xlsx"
 
 # Interactive graph: hower to get date and figure
 
