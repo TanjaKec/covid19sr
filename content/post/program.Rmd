@@ -68,7 +68,7 @@ library(widgetframe)
 
 
 ```{r, out.width = "100%", fig.align = 'center', fig.cap="Embedded CINS's article", echo=FALSE}
-knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara")
+knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara/")
 ```
 
 <blockquote class="twitter-tweet"><p lang="und" dir="ltr">🔎Pogledajte odakle dolaze donatori <a href="https://twitter.com/sns_srbija?ref_src=twsrc%5Etfw">@sns_srbija</a> <a href="https://twitter.com/socijalisti?ref_src=twsrc%5Etfw">@socijalisti</a> i <a href="https://twitter.com/demokrate?ref_src=twsrc%5Etfw">@demokrate</a> i ko je prikupio najviše para od donacija u periodu od sedam godina 💸👇<a href="https://t.co/2HHXrSLSLC">https://t.co/2HHXrSLSLC</a></p>&mdash; CINS (@CINSerbia) <a href="https://twitter.com/CINSerbia/status/1264812939401400320?ref_src=twsrc%5Etfw">May 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -81,7 +81,7 @@ knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-st
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-07.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-09.xlsx"
 
 # Interactive graph: hower to get date and figure
 
