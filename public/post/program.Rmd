@@ -63,6 +63,7 @@ library(readxl)
 library(tmap)
 library(tmaptools)
 library(widgetframe)
+library(htmlwidgets)
 ```
 
 
@@ -81,7 +82,7 @@ knitr::include_url("https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-st
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-13.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-06-26.xlsx"
 
 # Interactive graph: hower to get date and figure
 
