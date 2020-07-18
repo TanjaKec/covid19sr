@@ -319,7 +319,7 @@ covid_yu %>%
   theme(axis.text.x = element_text(angle = 90)) 
 ```
 
-Following graphs enable the comparison of the aceelleration of the spred between the ex-YU countries.
+The following graphs enable the comparison of the aceelleration of the epidemic between the ex-YU countries.
 
 ```{r 2nd_SR, echo=FALSE}
 covid_sr %>% 
