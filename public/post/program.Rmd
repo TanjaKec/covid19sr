@@ -169,10 +169,7 @@ covid_sr %>%
   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank()) +
-  theme(legend.position="none") +
-  theme(axis.text.x = element_text(angle = 90)) +
-  scale_x_date(labels = date_format("%m-%d"),
-               breaks = 'day') 
+  theme(legend.position="none") 
 ```
 
 
@@ -186,10 +183,7 @@ pl1 <- covid_sr %>%
   theme_minimal() +
   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
         panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank()) +
-  theme(axis.text.x = element_text(angle = 90)) +
-  scale_x_date(labels = date_format("%m-%d"),
-               breaks = 'day') 
+        panel.grid.minor.x = element_blank())
 
 pl1
 ```
@@ -207,17 +201,13 @@ pl_log <- covid_sr %>%
   theme_minimal() +
   theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
         panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank()) +
-  #theme(axis.text.x = element_text(angle = 90)) +
-  scale_x_date(labels = date_format("%m-%d"),
-               breaks = 'week') 
+        panel.grid.minor.x = element_blank()) 
 
 pl_log
 ```
 
 ```{r two_plots, echo=FALSE}
-pl1 <- pl1 + scale_x_date(labels = date_format("%m-%d"),
-                          breaks = 'week') +
+pl1 <- pl1 +
   theme(axis.text.x = element_text(angle = 0)) +
   labs (title = "Cumulative # of new cases", 
         caption = "")
@@ -329,6 +319,119 @@ covid_yu %>%
   theme(axis.text.x = element_text(angle = 90)) 
 ```
 
+Following graphs enable the comparison of the aceelleration of the spred between the ex-YU countries.
+
+```{r 2nd_SR, echo=FALSE}
+covid_sr %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for SR", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  geom_vline(xintercept = as.numeric(as.Date("2020-05-11")), linetype = 3, colour = "blue", alpha = 0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("2020-05-21")), linetype = 3, colour = "red", alpha = 0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("2020-06-10")), linetype = 3, colour = "red", alpha = 0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("2020-07-02")), linetype = 3, colour = "red", alpha = 0.5) +
+  annotate(geom="text", x=as.Date("2020-05-11"), y = -110, 
+           label="easing of the measures", col = "red") +
+  annotate(geom="text", x=as.Date("2020-05-21"), y = 190, 
+           label="the election", col = "dodgerblue4") +
+  annotate(geom="text", x=as.Date("2020-06-10"), y = 150, 
+           label="Red Star vs Partizan", col = "dodgerblue4") +
+  annotate(geom="text", x=as.Date("2020-07-02"), y = 110, 
+           label="protests begin", col = "dodgerblue4") 
+```
+
+```{r 2nd_HR, echo=FALSE}
+covid_hr <- covid_yu %>% 
+  filter(country_code == "HRV") 
+  
+covid_hr %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for HRV", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) 
+```
+
+```{r 2nd_CG, echo=FALSE}
+covid_cg <- covid_yu %>% 
+  filter(country_code == "MNE") 
+
+covid_cg %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for MNE", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+```
+
+```{r 2nd_BIH, echo=FALSE}
+covid_bh <- covid_yu %>% 
+  filter(country_code == "BIH") 
+
+covid_bh %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for BIH", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+```
+
+```{r 2nd_SLO, echo=FALSE}
+covid_slo <- covid_yu %>% 
+  filter(country_code == "SVN") 
+
+covid_slo %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for SLO", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+```
+
+```{r 2nd_MK, echo=FALSE}
+covid_mk <- covid_yu %>% 
+  filter(country_code == "MKD") 
+
+covid_mk %>% 
+  filter(!is.na(second_der)) %>% 
+  ggplot(aes(x = dateRep, y = second_der)) +
+  geom_line() + geom_point(col = "#00688B") +
+  xlab("") + ylab("") +
+  labs (title = "2nd derivative of F(x) for MKD", 
+        caption = "Data from: https://www.ecdc.europa.eu") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 14, vjust = 2, hjust=0.5),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
+```
+
 ##### Growth Rate
 
 The number of registered cases at the beginning of the monitoring for covid-19 in Serbia was very small, starting from 1 on 06-March-202 and increasing by a few in the first week, reflecting in the high growth rate for those days. For example, from the first case reported on 6th March to the fourth on 9th March there is a difference of three, which gives 300% growth rate. For that reason the following graph includes growth rate figures starting from 15-March. 
@@ -345,9 +448,7 @@ covid_sr[7:lg,] %>%
   labs (title = "Percentage Growth Rate", 
         caption = "Data from: https://www.ecdc.europa.eu") +
   theme_bw() +
-  theme(axis.text.x = element_text(angle = 90)) +
-  scale_x_date(labels = date_format("%m-%d"),
-               breaks = 'day') 
+  theme(axis.text.x = element_text(angle = 90))
 ```
 
 
@@ -522,9 +623,7 @@ mydt %>%
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank()) +
   theme(legend.position="none") +
-  theme(axis.text.x = element_text(angle = 90)) +
-  scale_x_date(labels = date_format("%m-%d"),
-               breaks = 'day')
+  theme(axis.text.x = element_text(angle = 90))
 
 
 
