@@ -77,7 +77,8 @@ library(htmlwidgets)
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-07-18.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
+
 
 # Interactive graph: hower to get date and figure
 
@@ -334,12 +335,12 @@ covid_sr %>%
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank()) +
   geom_vline(xintercept = as.numeric(as.Date("2020-05-11")), linetype = 3, colour = "blue", alpha = 0.5) +
-  geom_vline(xintercept = as.numeric(as.Date("2020-05-21")), linetype = 3, colour = "red", alpha = 0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("2020-06-21")), linetype = 3, colour = "red", alpha = 0.5) +
   geom_vline(xintercept = as.numeric(as.Date("2020-06-10")), linetype = 3, colour = "red", alpha = 0.5) +
   geom_vline(xintercept = as.numeric(as.Date("2020-07-02")), linetype = 3, colour = "red", alpha = 0.5) +
   annotate(geom="text", x=as.Date("2020-05-11"), y = -110, 
            label="easing of the measures", col = "red") +
-  annotate(geom="text", x=as.Date("2020-05-21"), y = 190, 
+  annotate(geom="text", x=as.Date("2020-06-21"), y = 190, 
            label="the election", col = "dodgerblue4") +
   annotate(geom="text", x=as.Date("2020-06-10"), y = 150, 
            label="Red Star vs Partizan", col = "dodgerblue4") +
