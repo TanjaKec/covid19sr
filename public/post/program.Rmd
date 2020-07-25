@@ -40,7 +40,8 @@ Up **until March 29th** the [Office for Information technologies and eGovernment
 
 We will continue to source any available data related to Covid19 in Serbia and update our site accordingly using data published by [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) .
 
-In the meantime, we continue to support local journalists in helping them to visualise their findings. We contributed to the [CINS](https://www.cins.rs/)' recent article about [donations to local political parties for the period between 2012-2018](https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara). We created an interactive thematic map, choropleth, shading the development group of the town and adding two more layers of information, i.e. attributes: the total amount of money donated (size and the colour of the bubble) and the amount of money received by each of the political party (popup menu).    
+In the meantime, we continue to support local journalists in helping them to visualise their findings. We contributed to the [CINS](https://www.cins.rs/)' recent article about [donations to local political parties for the period between 2012-2018](https://www.cins.rs/sns-sps-i-ds-za-sedam-godina-gradjani-strankama-donirali-oko-15-milijardi-dinara). We created an interactive thematic map, choropleth, shading the development group of the town and adding two more layers of information, i.e. attributes: the total amount of money donated (size and the colour of the bubble) and the amount of money received by each of the political party (popup menu).  
+
 
 ```{r libraries, echo=FALSE, message = FALSE, warning = FALSE, results = FALSE}
 library(readxl)
@@ -68,6 +69,16 @@ library(htmlwidgets)
 
 
 <blockquote class="twitter-tweet"><p lang="und" dir="ltr">🔎Pogledajte odakle dolaze donatori <a href="https://twitter.com/sns_srbija?ref_src=twsrc%5Etfw">@sns_srbija</a> <a href="https://twitter.com/socijalisti?ref_src=twsrc%5Etfw">@socijalisti</a> i <a href="https://twitter.com/demokrate?ref_src=twsrc%5Etfw">@demokrate</a> i ko je prikupio najviše para od donacija u periodu od sedam godina 💸👇<a href="https://t.co/2HHXrSLSLC">https://t.co/2HHXrSLSLC</a></p>&mdash; CINS (@CINSerbia) <a href="https://twitter.com/CINSerbia/status/1264812939401400320?ref_src=twsrc%5Etfw">May 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Our analysis has recently been featured in [Danas](https://www.danas.rs) on their front page:
+
+```{r embed1, out.extra='style="border: none;"', out.width='99%', fig.cap="Front page", echo = FALSE}
+knitr::include_url('https://www.danas.rs/naslovna/naslovna-za-21-jul-2020/')
+```
+
+```{r embed2, out.extra='style="border: none;"', out.width='99%', fig.cap="Featered article", echo = FALSE}
+knitr::include_url('https://www.danas.rs/drustvo/kako-se-kretalo-sirrenje-korona-virus-u-srbiji-od-marta-do-danas/')
+```
 
 ---
 
