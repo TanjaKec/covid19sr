@@ -80,6 +80,7 @@ knitr::include_url('https://www.danas.rs/naslovna/naslovna-za-21-jul-2020/')
 knitr::include_url('https://www.danas.rs/drustvo/kako-se-kretalo-sirrenje-korona-virus-u-srbiji-od-marta-do-danas/')
 ```
 
+
 ---
 
 ### Using [ecdc data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
