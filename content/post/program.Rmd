@@ -76,6 +76,7 @@ Our analysis has recently been featured in [Danas](https://www.danas.rs) on thei
 knitr::include_url('https://www.danas.rs/naslovna/naslovna-za-21-jul-2020/')
 ```
 
+
 ```{r embed2, out.extra='style="border: none;"', out.width='99%', fig.cap="Featered article", echo = FALSE}
 knitr::include_url('https://www.danas.rs/drustvo/kako-se-kretalo-sirrenje-korona-virus-u-srbiji-od-marta-do-danas/')
 ```
