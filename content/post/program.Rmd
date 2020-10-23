@@ -29,6 +29,7 @@ This is a data analysis report concerning the visualisation of the COVID-19 viru
 
 This is a [Sister Analyst](https://sisteranalyst.org/) project. 
 
+
 ---
 
 Open data belongs to everyone; it empowers people to make informed decisions that are not clouded by misinformation, rumour and gossip. To be able to identify the underlying facts within data sets it’s crucial that individuals and communities possess the necessary skills. In other words, people should be data literate i.e. as comfortable studying models and charts as they are reading a newspaper. 
