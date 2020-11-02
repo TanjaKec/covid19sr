@@ -15,7 +15,6 @@ share: yes
 katex: true
 ---
 
-
 ```{r setup, include=FALSE, message = FALSE, warning = FALSE, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       include = TRUE,
@@ -775,7 +774,6 @@ widgetframe::frameWidget(ts)
 ---
   
 **Sisters in action:** [Tatjana Kecojević](https://www.linkedin.com/in/tatjana-kecojevic-803704143/), [Tijana Blagojev](https://www.linkedin.com/in/tijana-blagojev-288b3442/), [Jovana Savić](https://www.linkedin.com/in/jovana-savi%C4%87-12aa305a/), [Katarina Kosimina](https://www.linkedin.com/in/kosmina/) and [Anđela Milivojević](https://www.linkedin.com/in/andjela-milivojevic/) 🙌💜
-
 
 ---
 
