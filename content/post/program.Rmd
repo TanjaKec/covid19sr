@@ -378,6 +378,7 @@ covid_hr %>%
         panel.grid.minor.x = element_blank()) 
 ```
 
+
 ```{r 2nd_CG, echo=FALSE}
 covid_cg <- covid_yu %>% 
   filter(country_code == "MNE") 
