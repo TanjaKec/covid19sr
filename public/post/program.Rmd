@@ -466,7 +466,6 @@ covid_sr[7:lg,] %>%
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-
 ---
 
 The data used for the following part of the analysis is sourced from the [Portal of Open Data of Republic of Serbia](https://data.gov.rs/sr/datasets/covid-19-zarazheni/?fbclid=IwAR1nX00zb9p_ceNfBoxQaObyjI8XsMWEIKj2NYGhnTf2xAh6oMsvvmnbSoQ). **This data has not been updated since March 29th.**
