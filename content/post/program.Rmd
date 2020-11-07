@@ -22,6 +22,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE,
                       cache = FALSE)
+#https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
 ```
 
 This is a data analysis report concerning the visualisation of the COVID-19 virus within the Republic of Serbia. All of the report is created with [R](https://www.r-project.org). To learn how to use R and develop a report like this visit [Data Literacy in R](https://dataliteracy.rbind.io/).
@@ -161,7 +162,7 @@ fig
 
 The experience with COVID-19 shows that infection of the disease can be controlled by implementing the measures of prevention as soon as an outbreak has been detected.
 
-To monitor the effectives of the introduced measures we focus on daily cumulative cases of COVID-19 infection that can be expressed as 
+To monitor the effectiveness of the introduced measures we focus on daily cumulative cases of COVID-19 infection that can be expressed as 
 
 $$F(x) = \sum_{i=1}^{n} x_i$$
 
