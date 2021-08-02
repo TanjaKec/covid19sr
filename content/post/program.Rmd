@@ -101,7 +101,6 @@ covid_yu <- covid_ecdc %>%
 
 covid_yu <- covid_yu[, -c(2:4, 8)]
 
-
 covid_yu <- covid_yu %>% 
   separate(dateRep, c("dateRep"), sep = "T") %>%
   group_by(countriesAndTerritories) %>% 
