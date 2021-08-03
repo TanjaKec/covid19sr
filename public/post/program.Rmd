@@ -76,7 +76,6 @@ Our analysis was recently featured in [Danas](https://www.danas.rs):
 and on their front page 😄:
 <https://www.danas.rs/naslovna/naslovna-za-21-jul-2020/>
 
-
 ---
 
 ### Using [ecdc data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
