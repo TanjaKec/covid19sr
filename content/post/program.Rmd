@@ -14,7 +14,7 @@ menu: ''
 share: yes
 katex: true
 ---
-
+  
 ```{r setup, include=FALSE, message = FALSE, warning = FALSE, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       include = TRUE,
@@ -22,7 +22,6 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE,
                       cache = FALSE)
-#https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
 ```
 
 This is a data analysis report concerning the visualisation of the COVID-19 virus within the Republic of Serbia. All of the report is created with [R](https://www.r-project.org). To learn how to use R and develop a report like this visit [Data Literacy in R](https://dataliteracy.rbind.io/).
@@ -72,21 +71,18 @@ library(htmlwidgets)
 <blockquote class="twitter-tweet"><p lang="und" dir="ltr">🔎Pogledajte odakle dolaze donatori <a href="https://twitter.com/sns_srbija?ref_src=twsrc%5Etfw">@sns_srbija</a> <a href="https://twitter.com/socijalisti?ref_src=twsrc%5Etfw">@socijalisti</a> i <a href="https://twitter.com/demokrate?ref_src=twsrc%5Etfw">@demokrate</a> i ko je prikupio najviše para od donacija u periodu od sedam godina 💸👇<a href="https://t.co/2HHXrSLSLC">https://t.co/2HHXrSLSLC</a></p>&mdash; CINS (@CINSerbia) <a href="https://twitter.com/CINSerbia/status/1264812939401400320?ref_src=twsrc%5Etfw">May 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-Our analysis was recently featured in [Danas](https://www.danas.rs):
-<https://www.danas.rs/drustvo/kako-se-kretalo-sirrenje-korona-virus-u-srbiji-od-marta-do-danas/>
-and on their front page 😄:
-<https://www.danas.rs/naslovna/naslovna-za-21-jul-2020/>
-
-
 ---
 
 ### Using [ecdc data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
   
   
+  
 ```{r ecdc_data, echo = FALSE, message = FALSE, warning = FALSE, results = FALSE}
 ## Using [ecdc data:](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) 
 
-url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-11-25.xlsx"
+url2 <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
+
+
 # Interactive graph: hower to get date and figure
 
 GET(url2, write_disk(tf <- tempfile(fileext = ".xlsx")))
@@ -99,6 +95,7 @@ covid_yu <- covid_ecdc %>%
   filter(countriesAndTerritories %in% c("Bosnia_and_Herzegovina", "Croatia", "Montenegro", "North_Macedonia", "Serbia", "Slovenia"))
 
 # --- tidy data ---
+
 covid_yu <- covid_yu[, -c(2:4, 8)]
 
 
@@ -154,7 +151,7 @@ fig
 
 The experience with COVID-19 shows that infection of the disease can be controlled by implementing the measures of prevention as soon as an outbreak has been detected.
 
-To monitor the effectiveness of the introduced measures we focus on daily cumulative cases of COVID-19 infection that can be expressed as 
+To monitor the effectives of the introduced measures we focus on daily cumulative cases of COVID-19 infection that can be expressed as 
 
 $$F(x) = \sum_{i=1}^{n} x_i$$
 
@@ -178,6 +175,7 @@ covid_sr %>%
         panel.grid.minor.x = element_blank()) +
   theme(legend.position="none") 
 ```
+
 
 ```{r, echo=FALSE}
 pl1 <- covid_sr %>% 
@@ -370,7 +368,6 @@ covid_hr %>%
         panel.grid.minor.x = element_blank()) 
 ```
 
-
 ```{r 2nd_CG, echo=FALSE}
 covid_cg <- covid_yu %>% 
   filter(country_code == "MNE") 
@@ -457,6 +454,7 @@ covid_sr[7:lg,] %>%
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90))
 ```
+
 
 ---
 
